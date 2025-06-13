@@ -8,6 +8,7 @@ import FocusModal from "../components/FocusModal";
 import { useAuth } from "../context/AuthContext";
 import { getTasks, searchTask, type Task } from "../services/TaskService";
 import { useDebounce } from "../hooks/useDebounce";
+import Logo from "../assets/Logo.svg";
 
 type ModalState = {
   mode: "create" | "edit" | null;
@@ -128,6 +129,15 @@ export default function Dashboard() {
           taskToEdit={modalState.task}
         />
       </FocusModal>
+      <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+        <aside className="grid-flow-col items-center">
+          <img className="size-12" src={Logo} alt="Logo" />
+          <p>
+            RzCorp Copyright © {new Date().getFullYear()} - All right reserved
+          </p>
+        </aside>
+        <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end"></nav>
+      </footer>
     </div>
   );
 }
