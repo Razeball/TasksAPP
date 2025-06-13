@@ -1,7 +1,7 @@
 import user from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import env from "../config.js";
+import env from "../config/config.js";
 
 //Get the email and password field from the body, check if there is another existing email
 //create the user (the model already have hook that hash the password)

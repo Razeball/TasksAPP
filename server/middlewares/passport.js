@@ -1,6 +1,6 @@
 import { ExtractJwt, Strategy as JwtStrategy } from "passport-jwt";
 import passport from "passport";
-import env from "../config.js";
+import env from "../config/config.js";
 import user from "../models/userModel.js";
 
 //passport option, extract the token from the header and then assign the key
