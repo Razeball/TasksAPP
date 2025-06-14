@@ -8,16 +8,16 @@ export async function register(user: AuthPayload): Promise<void> {
 
 // Returns token on success, throws error on failure
 export async function log(user: AuthPayload): Promise<string> {
-  const response = await api.post<{ token: string }>(`/auth/login`, user);
+  const response = await api.post<{ token: string }>(`/auth/login/`, user);
   return response.data.token;
 }
 
 // Returns true on success, throws error on failure
 export async function checkUser(user: AuthPayload): Promise<boolean> {
-  const res = await api.post('/auth/check', user);
+  const res = await api.post('/auth/check/', user);
   return res.status === 200;
 }
 
 export async function editUser(user: AuthPayload): Promise<void> {
-  await api.put('/auth/update', user);
+  await api.put('/auth/update/', user);
 }
